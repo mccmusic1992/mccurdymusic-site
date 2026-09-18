@@ -1,4 +1,6 @@
-/musicians-toolkit  /index.html  200
-/rostrum            /index.html  200
-/bio                /index.html  200
-/philosophy         /index.html  200
+# Clean URLs for the single-file site. 200 = rewrite, so index.html is
+# served and its router shows the right page.
+/musicians-toolkit   /index.html   200
+/rostrum             /index.html   200
+/bio                 /index.html   200
+/philosophy          /index.html   200

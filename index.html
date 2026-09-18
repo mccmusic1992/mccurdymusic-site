@@ -1,21 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>McCurdy Music — Private Lessons, Clinics &amp; Apps</title>
-<meta name="description" content="Private woodwind, brass, and saxophone lessons, jazz clinics, and Musician's Toolkit from Chris McCurdy, Band Director at Grant High School in Portland, Oregon.">
-<meta property="og:title" content="McCurdy Music">
-<meta property="og:description" content="Private lessons, clinics, and practice apps from Chris McCurdy, Band Director at Grant High School in Portland, Oregon.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>McCurdy Music &mdash; Chris McCurdy, Band Director</title>
+<meta name="description" content="Chris McCurdy, Band Director at Grant High School in Portland, Oregon. Private lessons for woodwinds and brass, clinics and adjudication for school programs, and practice apps built for students.">
+<link rel="canonical" id="canonical" href="https://mccurdymusic.com/">
+
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="McCurdy Music">
+<meta property="og:title" content="McCurdy Music &mdash; Chris McCurdy, Band Director">
+<meta property="og:description" content="Chris McCurdy, Band Director at Grant High School in Portland, Oregon. Private lessons for woodwinds and brass, clinics and adjudication for school programs, and practice apps built for students.">
 <meta property="og:url" content="https://mccurdymusic.com/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8E%B7</text></svg>">
+<meta name="twitter:card" content="summary">
+
+<meta name="theme-color" content="#2E2B27">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Literata:opsz,wght@7..72,400&display=swap" rel="stylesheet">
-<meta name="theme-color" content="#2E2B27">
+
 <style>
   :root {
+    color-scheme: light dark;
     --ink: #2E2B27;
     --ink-soft: #8E877B;
     --paper: #F5F3EE;
@@ -734,6 +746,21 @@
     display: inline-block;
     margin-top: 16px;
   }
+
+  /* ---------- Carried over from the artifact shell ---------- */
+  img { max-width: 100%; }
+
+  /* ---------- Contact form status / honeypot ---------- */
+  .hp { position: absolute; left: -9999px; }
+  .form-status {
+    margin: 4px 0 0;
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--accent);
+  }
+  .form-status.is-error { color: var(--ink); }
+  form.inquiry button.btn[disabled] { opacity: 0.55; cursor: default; }
 </style>
 </head>
 <body>
@@ -1029,7 +1056,7 @@
           </div>
           <p class="app-note">One-time purchase, no subscription.</p>
         </div>
-        <div class="app-shot"><img src="images/toolkit-metronome.jpg" alt="The Musician's Toolkit metronome screen."></div>
+        <div class="app-shot"><img src="images/mt-metronome.jpg" alt="The Musician's Toolkit metronome screen."></div>
       </div>
 
       <div class="app-secondary">
@@ -1053,11 +1080,10 @@
         <span class="section-num">05 — Contact</span>
       </div>
       <div class="contact-panel">
-        <form class="inquiry" id="inquiryForm" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form class="inquiry" id="inquiryForm" name="inquiry" method="POST"
+              data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="inquiry">
-          <p class="honeypot-field" style="position:absolute;left:-9999px;top:-9999px;">
-            <label>Leave this field blank: <input name="bot-field"></label>
-          </p>
+          <p class="hp"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required>
@@ -1081,10 +1107,8 @@
             <textarea id="message" name="message" placeholder="Instrument, experience level, and what you're looking for..."></textarea>
           </div>
           <button class="btn primary" type="submit">Send inquiry</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
         </form>
-        <div class="form-success" id="formSuccess" style="display:none; border:1px solid var(--line); background:var(--paper-raised); border-radius:6px; padding:22px 24px;">
-          <p style="margin:0; color:var(--ink-soft);">Thanks — your message is in. I'll get back to you within a couple of days.</p>
-        </div>
         <div class="contact-side">
           <p>
             Prefer email? Reach out directly and I'll get back to you within a couple
@@ -1104,7 +1128,7 @@
   <header class="subpage-head">
     <div class="wrap">
       <div class="app-head-row">
-        <div class="app-icon"><img src="images/toolkit-app-icon.png" alt="Musician's Toolkit app icon"></div>
+        <div class="app-icon"><img src="images/musicians-toolkit-icon.png" alt="Musician's Toolkit app icon"></div>
         <span class="label">Now on iOS</span>
       </div>
       <h1>Musician's Toolkit</h1>
@@ -1129,19 +1153,19 @@
       </div>
       <div class="shots">
         <div class="shot">
-          <div class="frame"><img src="images/toolkit-metronome.jpg" alt="Metronome screen showing 96 BPM, a tempo slider, tap tempo, and time signature options."></div>
+          <div class="frame"><img src="images/mt-metronome.jpg" alt="Metronome screen showing 96 BPM, a tempo slider, tap tempo, and time signature options."></div>
           <div class="cap">Metronome</div>
         </div>
         <div class="shot">
-          <div class="frame"><img src="images/toolkit-drone.jpg" alt="Drone screen showing a sustained C, a twelve-pitch grid, a volume slider, and equal or just tuning."></div>
+          <div class="frame"><img src="images/mt-drone.jpg" alt="Drone screen showing a sustained C, a twelve-pitch grid, a volume slider, and equal or just tuning."></div>
           <div class="cap">Drone</div>
         </div>
         <div class="shot">
-          <div class="frame"><img src="images/toolkit-chromatic-tuner.jpg" alt="Chromatic tuner screen showing concert pitch references from 432 to 442 Hz and needle response settings."></div>
+          <div class="frame"><img src="images/mt-tuner.jpg" alt="Chromatic tuner screen showing concert pitch references from 432 to 442 Hz and needle response settings."></div>
           <div class="cap">Chromatic Tuner</div>
         </div>
         <div class="shot">
-          <div class="frame"><img src="images/toolkit-phrase-trainer.jpg" alt="Phrase trainer screen showing a loaded audio file, a waveform, and a playback speed slider from 25 to 200 percent."></div>
+          <div class="frame"><img src="images/mt-phrase-trainer.jpg" alt="Phrase trainer screen showing a loaded audio file, a waveform, and a playback speed slider from 25 to 200 percent."></div>
           <div class="cap">Phrase Trainer</div>
         </div>
       </div>
@@ -1301,7 +1325,7 @@
           <div class="cap">Rehearsal desk — the day's classes and schedule, set before first period</div>
         </div>
         <div class="shot">
-          <div class="frame"><img src="images/rostrum-projector-view.jpg" alt="Rostrum projector view, showing the current piece, listen-for notes, and a running block clock"></div>
+          <div class="frame"><img src="images/rostrum-projector.jpg" alt="Rostrum projector view, showing the current piece, listen-for notes, and a running block clock"></div>
           <div class="cap">Projector view — what's on the wall during rehearsal, with the clock running</div>
         </div>
         <div class="shot">
@@ -1530,14 +1554,17 @@
         <div>
           <h3>Optimistic, sometimes to a fault</h3>
           <p>
-            I believe students are capable of just about anything, and I
-            know that gets me in trouble now and then. I'll take it. One of
-            my saxophonists struggled through his first two years before he
-            found his place with the horn in his hands. He worked, and he
-            ended up the best soloist I had. What impressed me was never the
-            playing. It was the grit. A lesson is where that bet gets made
-            every week: we aim at something a little past where a student
-            is, and we don't apologize for missing it the first few tries.
+            I believe students are capable of just about anything, and I know
+            perfectly well that the optimism gets me into trouble now and then,
+            which is a trade I have always been willing to make. One of my
+            saxophonists struggled through his first two years before he found
+            his footing with the horn in his hands, and by the time he graduated
+            he was the strongest soloist in the program, though what impressed
+            me about him was never the playing so much as his willingness to
+            keep turning up to something he was not yet any good at. A private
+            lesson is where that bet gets made every week, because we aim at
+            something a little past where the student actually is and then agree
+            in advance not to apologize for missing it the first several tries.
           </p>
         </div>
       </div>
@@ -1546,14 +1573,16 @@
         <div>
           <h3>A door at any time</h3>
           <p>
-            There should be a way into music for any student, at any point.
-            In my program that means classes that don't all run on the same
-            expectations — the easiest door is the jazz lab, which starts
-            with learning music entirely by ear, before a page of notation
-            or a word of theory shows up. It's demanding. It just isn't out
-            of reach for anyone. Private lessons work the same way. I teach
-            beginners and I teach students getting ready for auditions, and
-            I've never thought the beginner was the less serious job.
+            There should be a way into music for any student at any point, and
+            in my program that means a set of classes that deliberately do not
+            all run on the same expectations. The easiest door is the jazz lab,
+            which begins with learning music entirely by ear, long before a page
+            of notation or a word of theory ever shows up, and it asks a great
+            deal of the students who walk through it without ever being out of
+            reach for anyone who wants in. Private lessons work on the same
+            principle, since I teach beginners and I teach students preparing
+            for auditions, and I have never once considered the beginner to be
+            the less serious job of the two.
           </p>
         </div>
       </div>
@@ -1562,20 +1591,22 @@
         <div>
           <h3>Knock the walls down</h3>
           <p>
-            My job is to knock down any wall standing between a motivated,
-            willing student and the music. Most often that wall is money, so we
-            fundraise, and honor bands, festivals, and solo and ensemble go out
-            free of charge to the family.
+            My job is to knock down whatever wall is standing between a
+            motivated, willing student and the music, and more often than not
+            that wall turns out to be money, so we fundraise in order to send
+            honor bands, festivals, and solo and ensemble out free of charge to
+            the family.
           </p>
           <p>
-            Sometimes the wall is the room itself. Our jazz program for girls
-            and gender minorities started as a day camp where middle schoolers
-            learned from local female jazz professionals, and it now reaches
-            across the whole jazz program; a handful of those students gig
-            around Portland as the combo
+            Other times the wall is the room itself, which is why our jazz
+            program for girls and gender minorities began as a day camp where
+            middle schoolers learned from local female jazz professionals, and
+            it has since grown into something that reaches across the whole jazz
+            program, with a handful of those students now gigging around
+            Portland as the combo
             <a href="https://www.instagram.com/jazzchangespdx/" target="_blank" rel="noopener">JazzChangesPDX</a>.
-            The freshmen who turned up for it this fall were the proof it was
-            needed.
+            The freshmen who turned up for it this fall were all the proof
+            anyone needed that it was worth building in the first place.
           </p>
         </div>
       </div>
@@ -1584,14 +1615,15 @@
         <div>
           <h3>Why the instrument does what it does</h3>
           <p>
-            We spend real time on the physics. Tube length and what it has
-            to do with the speed of sound. The mouth as a ramp that sets how
-            fast the air travels. What is actually happening when two sounds
-            overlay, agree, or conflict, and how that becomes harmony. This
-            is the part a lesson does better than a rehearsal — one to one,
-            I can find the exact thing a student has misunderstood about
-            their own instrument, and sorting that out tends to solve more
-            than the problem we sat down with.
+            We spend real time on the physics of the thing, on tube length and
+            what it has to do with the speed of sound, on the mouth as a ramp
+            that sets how fast the air is traveling, and on what is actually
+            happening when two sounds overlay one another, agree, or conflict,
+            and how all of that becomes harmony. This is one of the places where
+            a lesson can do what a rehearsal cannot, because sitting one to one
+            I can usually find the exact thing a student has misunderstood about
+            their own instrument, and sorting out that misunderstanding tends to
+            solve a good deal more than the problem we sat down to work on.
           </p>
         </div>
       </div>
@@ -1600,15 +1632,17 @@
         <div>
           <h3>The first look is inward</h3>
           <p>
-            When the work isn't getting done, everyone already knows. The
-            first question isn't whose fault it is. It's whether I gave them
-            enough time and enough scaffolding. If I did, then we find out
-            what the real block is for that student. Accountability is two
-            things at once: the work gets done, and the room stays a place
-            where a student can fail and still belong. In a weekly lesson
-            that matters more, not less. There's nowhere to hide in a room
-            with two people in it, so it has to be safe to turn up having
-            had a bad week.
+            When the work is not getting done, everyone in the room already
+            knows it, so the first question I ask is not whose fault it is but
+            whether I gave them enough time and enough scaffolding to do it, and
+            only once I am satisfied on that count do we go looking for whatever
+            the real block is for that particular student. Accountability has to
+            mean two things at the same time, that the work gets finished and
+            that the room stays a place where a student can fail at something
+            and still belong to the group. In a weekly lesson that matters more
+            rather than less, because there is nowhere to hide in a room with
+            two people in it, and a student has to be able to walk in having had
+            a bad week and say so.
           </p>
         </div>
       </div>
@@ -1617,12 +1651,12 @@
         <div>
           <h3>What they keep</h3>
           <p>
-            Most students stop playing at some point, and that's fine. What
-            I want them to still have ten years later is the grit, the
-            ability to hit a deadline, the habit of thinking in context, a
-            kind and team-first way of working with other people, and the
-            memory of having been part of something that got really, really
-            good.
+            Most students stop playing at some point, and there is nothing wrong
+            with that. What I hope they still have ten years later is the grit,
+            the ability to hit a deadline, the habit of thinking about their own
+            part in the context of everything going on around it, a kind and
+            team-first way of working with other people, and the memory of
+            having been part of something that got really, really good.
           </p>
         </div>
       </div>
@@ -1634,42 +1668,67 @@
 
 <footer>
   <div class="wrap foot-row">
-    <span class="label">© <span id="year">2026</span> McCurdy Music</span>
+    <span class="label">© 2026 McCurdy Music</span>
     <span class="label">Portland, Oregon</span>
   </div>
 </footer>
 
 <script>
-  // Page slugs, so the app page can be linked to directly:
-  // mccurdymusic.com/#musicians-toolkit
-  var ROUTES = { 'musicians-toolkit': 'app', 'rostrum': 'rostrum', 'bio': 'bio', 'philosophy': 'philosophy' };
-  var SLUGS = { app: 'musicians-toolkit', rostrum: 'rostrum', bio: 'bio', philosophy: 'philosophy' };
+  // Clean URLs. _redirects rewrites each path to index.html with a 200, and
+  // this routes it to the right page. Old #hash links still work.
+  var PATHS  = { '/musicians-toolkit': 'app', '/rostrum': 'rostrum', '/bio': 'bio', '/philosophy': 'philosophy' };
+  var SLUGS  = { home: '/', app: '/musicians-toolkit', rostrum: '/rostrum', bio: '/bio', philosophy: '/philosophy' };
+  var HASHES = { 'musicians-toolkit': 'app', 'rostrum': 'rostrum', 'bio': 'bio', 'philosophy': 'philosophy' };
+  var TITLES = {
+    home: 'McCurdy Music — Chris McCurdy, Band Director',
+    app: "Musician's Toolkit — McCurdy Music",
+    rostrum: 'Rostrum — McCurdy Music',
+    bio: 'Full Bio — Chris McCurdy',
+    philosophy: 'Teaching Philosophy — Chris McCurdy'
+  };
+  var ORIGIN = 'https://mccurdymusic.com';
 
-  function showPage(id, keepHash) {
+  function renderPage(id) {
     document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
     var target = document.getElementById('page-' + id);
     if (target) target.classList.add('active');
-    if (!keepHash) {
-      var slug = SLUGS[id];
-      var next = slug ? '#' + slug : '';
-      try {
-        if (location.hash !== next) {
-          history.replaceState(null, '', location.pathname + location.search + next);
-        }
-      } catch (err) { /* history is unavailable in some embeds; navigation still works */ }
-    }
+    if (TITLES[id]) document.title = TITLES[id];
+    var canon = document.getElementById('canonical');
+    if (canon) canon.setAttribute('href', ORIGIN + (SLUGS[id] || '/'));
+  }
+
+  function currentPage() {
+    var hash = location.hash.replace(/^#/, '');
+    if (HASHES[hash]) return HASHES[hash];
+    var path = location.pathname.replace(/\/+$/, '');
+    return PATHS[path] || 'home';
+  }
+
+  function showPage(id) {
+    renderPage(id);
+    var path = SLUGS[id] || '/';
+    try {
+      if (location.pathname !== path || location.hash) {
+        history.pushState({ page: id }, '', path);
+      }
+    } catch (err) { /* history unavailable in some embeds; the page still switches */ }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  function routeFromLocation() {
-    var pathKey = location.pathname.replace(/^\//, '').replace(/\/$/, '');
-    if (ROUTES[pathKey]) { showPage(ROUTES[pathKey], true); return; }
-    var hashKey = location.hash.replace(/^#/, '');
-    if (ROUTES[hashKey]) { showPage(ROUTES[hashKey], true); return; }
+  function goHome(sectionId) {
+    renderPage('home');
+    try {
+      if (location.pathname !== '/') history.pushState({ page: 'home' }, '', '/');
+    } catch (err) {}
+    if (sectionId) {
+      requestAnimationFrame(function () {
+        var el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   }
-
-  window.addEventListener('hashchange', routeFromLocation);
-  routeFromLocation();
 
   // Jump to the contact form with the right reason already chosen, so a
   // director asking about Rostrum doesn't have to find it in the menu.
@@ -1688,48 +1747,53 @@
     }
   }
 
-  function goHome(sectionId) {
-    showPage('home');
-    if (sectionId) {
-      requestAnimationFrame(function () {
-        var el = document.getElementById(sectionId);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      });
+  window.addEventListener('popstate', function () { renderPage(currentPage()); });
+
+  // First paint. Only rewrite the URL when it came in as an old page #hash —
+  // section anchors like #contact are left alone so they still scroll.
+  (function () {
+    var id = currentPage();
+    renderPage(id);
+    if (HASHES[location.hash.replace(/^#/, '')]) {
+      try { history.replaceState({ page: id }, '', SLUGS[id] || '/'); } catch (err) {}
     }
-  }
+  })();
 
+  // Contact form -> Netlify Forms. Submissions land in the Netlify dashboard
+  // under the form name "inquiry"; turn on email notifications there.
+  (function () {
+    var form = document.getElementById('inquiryForm');
+    var status = document.getElementById('formStatus');
+    var button = form.querySelector('button[type="submit"]');
 
-  var inquiryForm = document.getElementById('inquiryForm');
-  inquiryForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var data = new FormData(inquiryForm);
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
-    })
-      .then(function () {
-        inquiryForm.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      })
-      .catch(function () {
-        var name = data.get('name');
-        var email = data.get('email');
-        var interest = data.get('interest');
-        var message = data.get('message');
-        var subject = encodeURIComponent('Inquiry: ' + interest + ' — ' + name);
-        var body = encodeURIComponent(
-          'Name: ' + name + '\n' +
-          'Email: ' + email + '\n' +
-          'Interested in: ' + interest + '\n\n' +
-          message
-        );
-        window.location.href = 'mailto:mccurdymusic@pm.me?subject=' + subject + '&body=' + body;
+    function setStatus(msg, isError) {
+      status.textContent = msg;
+      status.hidden = false;
+      status.classList.toggle('is-error', !!isError);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      button.disabled = true;
+      setStatus('Sending…');
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset();
+        setStatus("Thanks — that's with me. I'll get back to you within a couple of days.");
+      }).catch(function () {
+        setStatus("That didn't go through. Email me directly at mccurdymusic@pm.me and I'll pick it up there.", true);
+      }).then(function () {
+        button.disabled = false;
       });
-  });
-
-  var yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  })();
 </script>
+
+
+
 </body>
 </html>
